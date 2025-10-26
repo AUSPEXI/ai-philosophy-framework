@@ -305,21 +305,21 @@ class BlogSystem {
         const posts = category ? this.getPostsByCategory(category) : this.getAllPosts();
         
         container.innerHTML = posts.map(post => `
-            <article class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+            <article class="bg-gray-800/50 rounded-xl p-6 shadow-sm border border-gray-700 hover:shadow-md transition-shadow">
                 <div class="flex items-center justify-between mb-4">
-                    <span class="bg-gray-900 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         ${post.category}
                     </span>
-                    <time class="text-gray-500 text-sm">${this.formatDate(post.date)}</time>
+                    <time class="text-gray-400 text-sm">${this.formatDate(post.date)}</time>
                 </div>
                 
-                <h2 class="text-xl font-bold text-gray-900 mb-3">
-                    <a href="#" onclick="blogSystem.showPost('${post.slug}')" class="hover:text-gray-700 transition-colors">
+                <h2 class="text-xl font-bold text-white mb-3">
+                    <a href="#" onclick="blogSystem.showPost('${post.slug}')" class="hover:text-gray-300 transition-colors">
                         ${post.title}
                     </a>
                 </h2>
                 
-                <p class="text-gray-600 mb-4">${post.excerpt}</p>
+                <p class="text-gray-300 mb-4">${post.excerpt}</p>
                 
                 <div class="flex items-center justify-between">
                     <div class="flex flex-wrap gap-2">
