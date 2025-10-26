@@ -36,7 +36,7 @@ class BlogSystem {
     getDefaultPosts() {
         return [
             {
-                id: Date.now(),
+                id: 1,
                 title: "Redefining AI's Horizon: Purposeful Intelligence as the True Competitive Edge",
                 slug: "redefining-ai-horizon-purposeful-intelligence",
                 category: "Essays",
@@ -82,7 +82,7 @@ class BlogSystem {
 <p><em>Looking to transform your AI strategy with purposeful intelligence? My consultancy offers tailored roadmaps and implementation plans to align your AI with business goals. <a href="https://www.linkedin.com/in/gwylym-pryce-owen-a0b450268" target="_blank">DM me on LinkedIn</a> to explore my services.</em></p>`
             },
             {
-                id: Date.now() + 1,
+                id: 2,
                 title: "Calling All Lawyers: Help Build the Legal Structure for Mission-Driven AI",
                 slug: "calling-lawyers-mission-driven-ai-legal-structure",
                 category: "Announcements",
@@ -177,7 +177,7 @@ class BlogSystem {
 <p><em>If you're a lawyer interested in this, <a href="https://www.linkedin.com/in/gwylym-pryce-owen-a0b450268" target="_blank">DM me on LinkedIn</a> to discuss specifics.</em></p>`
             },
             {
-                id: Date.now() + 2,
+                id: 3,
                 title: "Obelisks Beyond Space-Time: Consciousness, Intelligence, and the Next Frontier of Meaning",
                 slug: "obelisks-beyond-spacetime-consciousness-intelligence",
                 category: "Essays",
@@ -278,7 +278,7 @@ class BlogSystem {
     // Add new post
     addPost(postData) {
         const newPost = {
-            id: Date.now(),
+            id: 1,
             slug: this.generateSlug(postData.title),
             date: new Date().toISOString().split('T')[0],
             ...postData
