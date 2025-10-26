@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophical AI Framework - AI That Serves All Stakeholders</title>
+    <meta name="description" content="Open-source framework ensuring AI systems balance the needs of customers, employees, communities, and the planet—not just optimize for profit.">
+    <meta name="keywords" content="AI ethics, philosophical AI, stakeholder balance, open source AI, AI framework">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://philosophical-ai-framework.vercel.app/">
+    <meta property="og:title" content="Philosophical AI Framework - AI That Serves All Stakeholders">
+    <meta property="og:description" content="Week 1 of building the first open-source framework that ensures AI systems serve all stakeholders, not just shareholders.">
+    <meta property="og:image" content="https://philosophical-ai-framework.vercel.app/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://philosophical-ai-framework.vercel.app/">
+    <meta property="twitter:title" content="Philosophical AI Framework - AI That Serves All Stakeholders">
+    <meta property="twitter:description" content="Week 1 of building the first open-source framework that ensures AI systems serve all stakeholders, not just shareholders.">
+    <meta property="twitter:image" content="https://philosophical-ai-framework.vercel.app/og-image.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0d1117',
+                        'dark-surface': '#161b22',
+                        'dark-border': '#30363d',
+                        'dark-text': '#f0f6fc',
+                        'dark-text-secondary': '#8b949e',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Black and white theme */
+        body {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .week1-badge {
+            background: linear-gradient(135deg, #333333, #666666);
+            animation: pulse 2s infinite;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%239C92AC\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"1\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+            <!-- Navigation -->
+            <nav class="flex items-center justify-between mb-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-gray-600 to-gray-800 rounded-lg flex items-center justify-center border border-gray-500">
+                        <span class="text-white font-bold text-sm">Φ</span>
+                    </div>
+                    <span class="text-xl font-bold">Philosophical AI</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="philosophical_ai_framework_complete.html" class="bg-white/20 text-white px-3 py-1 rounded-md hover:bg-white/30 transition-colors font-semibold border border-gray-500">🚀 Framework</a>
+                    <a href="#how-it-works" class="hover:text-gray-300 transition-colors">How It Works</a>
+                    <a href="#demo" class="hover:text-gray-300 transition-colors">Demo</a>
+                    <a href="#pricing" class="hover:text-gray-300 transition-colors">Pricing</a>
+                    <a href="#community" class="hover:text-gray-300 transition-colors">Community</a>
+                    <a href="/blog" class="hover:text-gray-300 transition-colors">Blog</a>
+                    <a href="/docs" class="hover:text-gray-300 transition-colors">Docs</a>
+                    <a href="https://github.com/AUSPEXI/ai-philosophy-framework" class="hover:text-gray-300 transition-colors" target="_blank">GitHub</a>
+                </div>
+            </nav>
+
+            <!-- Week 1 Badges -->
+            <div class="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
+                <span class="week1-badge text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    🚀 Week 1 - Building in Public
+                </span>
+                <span class="bg-gray-700 text-white px-4 py-2 rounded-full text-sm font-semibold border border-gray-500">
+                    ✅ MVP Shipping This Week
+                </span>
+
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
+                <!-- Left Column - Content -->
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                            AI That Serves All
+                            <span class="gradient-text">Stakeholders</span>
+                            , Not Just Shareholders
+                        </h1>
+                        
+                        <p class="text-xl lg:text-2xl text-gray-300 leading-relaxed">
+                            The first open-source framework that ensures multi-agent AI systems 
+                            balance the needs of customers, employees, communities, and the planet—
+                            not just optimize for profit.
+                        </p>
+                    </div>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="philosophical_ai_framework_complete.html" 
+                           class="bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors flex items-center justify-center shadow-lg border border-gray-300">
+                            🚀 Try Framework Now
+                        </a>
+                        <a href="https://github.com/AUSPEXI/ai-philosophy-framework" 
+                           class="bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-700 transition-colors flex items-center justify-center border border-gray-600"
+                           target="_blank">
+                            View on GitHub
+                        </a>
+                        <a href="#community" 
+                           class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors flex items-center justify-center">
+                            Join Community
+                        </a>
+                    </div>
+
+                    <!-- Under CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-6 text-sm text-gray-400">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Open-source core (AGPL v3)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Community-owned (20% equity via crowdfunding)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Mission-protected (UK Ltd with PBS Charter)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Visual -->
+                <div class="relative">
+                    <div class="relative z-10">
+                        <!-- Philosophical Framework Visualization -->
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold text-white mb-2">Three-Dimensional Analysis</h3>
+                                <p class="text-gray-300">Every AI workflow analyzed across philosophical dimensions</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4 p-4 bg-gray-800/50 rounded-lg border border-gray-600">
+                                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                        <span class="text-black font-bold">T</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white">Teleology</h4>
+                                        <p class="text-sm text-gray-300">Purpose & Goals</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center space-x-4 p-4 bg-gray-700/50 rounded-lg border border-gray-500">
+                                    <div class="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center">
+                                        <span class="text-white font-bold">E</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white">Epistemology</h4>
+                                        <p class="text-sm text-gray-300">Knowledge & Truth</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center space-x-4 p-4 bg-gray-800/50 rounded-lg border border-gray-600">
+                                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                        <span class="text-black font-bold">O</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white">Ontology</h4>
+                                        <p class="text-sm text-gray-300">Reality & Being</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">How It Works</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Four simple steps to ensure your AI systems serve all stakeholders, not just shareholders
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-600">
+                        <span class="text-black font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Upload Your AI Workflow</h3>
+                    <p class="text-gray-300 mb-4">
+                        Currently supporting: n8n (GA), AgentForce (Beta), LangGraph (Coming Soon)
+                    </p>
+                    <p class="text-sm text-gray-400">
+                        Export your workflow as JSON and upload via CLI or web interface.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-500">
+                        <span class="text-white font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Philosophical Analysis</h3>
+                    <p class="text-gray-300 mb-4">
+                        Our framework analyzes across three dimensions:
+                    </p>
+                    <div class="text-sm text-gray-400 space-y-1">
+                        <div><strong>Teleology:</strong> What goals is your AI optimizing for?</div>
+                        <div><strong>Epistemology:</strong> How reliable are your AI's knowledge sources?</div>
+                        <div><strong>Ontology:</strong> How does your AI categorize reality?</div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-600">
+                        <span class="text-black font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Stakeholder Balance Scoring</h3>
+                    <p class="text-gray-300 mb-4">
+                        Configure priorities across 6 stakeholder groups:
+                    </p>
+                    <div class="text-sm text-gray-400 grid grid-cols-2 gap-1">
+                        <div>• Customers</div>
+                        <div>• Employees</div>
+                        <div>• Community</div>
+                        <div>• Environment</div>
+                        <div>• Suppliers</div>
+                        <div>• Shareholders</div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-500">
+                        <span class="text-white font-bold text-xl">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Actionable Recommendations</h3>
+                    <p class="text-gray-300 mb-4">
+                        Get priority-ranked improvements with:
+                    </p>
+                    <div class="text-sm text-gray-400 space-y-1">
+                        <div>• Implementation code (n8n JSON, workflow configs)</div>
+                        <div>• Expected impact on each stakeholder</div>
+                        <div>• Trade-off analysis</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://github.com/AUSPEXI/ai-philosophy-framework/wiki" 
+                       class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors border border-gray-300"
+                       target="_blank">
+                        View Technical Documentation
+                    </a>
+                    <a href="#demo" 
+                       class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors">
+                        See Example Analysis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">See It In Action</h2>
+                <div class="bg-gray-800 border border-gray-600 rounded-lg p-4 max-w-2xl mx-auto mb-8">
+                    <h3 class="text-lg font-semibold text-white mb-2">MVP Status: Launching This Week</h3>
+                    <p class="text-gray-300">We're building in public. Here's where we are:</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Shipped -->
+                <div class="bg-gray-800 border border-gray-600 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">✅ Shipped</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Core analysis engines (teleology, epistemology, ontology)</li>
+                        <li>• n8n workflow parser</li>
+                        <li>• Stakeholder configuration system</li>
+                        <li>• GitHub repository</li>
+                    </ul>
+                </div>
+
+                <!-- Live Now -->
+                <div class="bg-gray-700 border border-gray-500 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">🚀 Live Now</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Web dashboard (fully functional)</li>
+                        <li>• Interactive philosophical analysis</li>
+                        <li>• n8n workflow upload & analysis</li>
+                        <li>• <a href="philosophical_ai_framework_complete.html" class="underline font-semibold text-white hover:text-gray-300">Try the Framework →</a></li>
+                    </ul>
+                </div>
+
+                <!-- This Week -->
+                <div class="bg-gray-800 border border-gray-600 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">📅 This Week</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Public code release (GitHub)</li>
+                        <li>• First 10 pilot slots open</li>
+                        <li>• Live demo video</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Beta Pilot Program -->
+            <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-8 text-white text-center mb-12 border border-gray-600">
+                <h3 class="text-2xl font-bold mb-4">Want Early Access?</h3>
+                <h4 class="text-xl font-semibold mb-6">Beta Pilot Program (Free for 6 Months)</h4>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h5 class="font-semibold mb-3">First 10 companies get:</h5>
+                        <ul class="text-left space-y-2">
+                            <li>✅ Full access to all features</li>
+                            <li>✅ Direct founder support</li>
+                            <li>✅ Influence product roadmap</li>
+                            <li>✅ Case study opportunity</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-semibold mb-3">Example Analysis Preview:</h5>
+                        <div class="bg-gray-700 rounded-lg p-4 text-left border border-gray-600">
+                            <div class="text-sm space-y-1">
+                                <div>📊 Overall Score: 48.0/100</div>
+                                <div>🔍 Data Sources: 8 identified</div>
+                                <div>⚠️ Risks: 3 critical issues</div>
+                                <div>💡 Recommendations: 6 actionable</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="beta-form" class="max-w-md mx-auto" action="https://formspree.io/f/movpadpn" method="POST">
+                    <div class="flex gap-4">
+                        <input type="email" 
+                               name="email"
+                               placeholder="Enter your email" 
+                               class="flex-1 px-4 py-3 rounded-lg text-gray-900 border border-gray-300"
+                               required>
+                        <button type="submit" 
+                                class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                            Apply for Beta
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Demo Video Placeholder -->
+            <div class="bg-gray-800 rounded-2xl p-8 text-center border border-gray-600">
+                <h3 class="text-xl font-semibold text-white mb-4">Watch the Vision</h3>
+                <div class="bg-gray-700 rounded-lg h-64 flex items-center justify-center mb-4 border border-gray-600">
+                    <div class="text-gray-300">
+                        <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                        <p>Demo video coming this week</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 mb-4">
+                    Can't wait? Join Discord for real-time updates:
+                </p>
+                <a href="#community" 
+                   class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors inline-block">
+                    Join Discord Community
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Pricing & Access</h2>
+                <div class="bg-gray-800 border border-gray-600 rounded-lg p-4 max-w-3xl mx-auto mb-8">
+                    <h3 class="text-lg font-semibold text-white mb-2">Early Stage Transparency</h3>
+                    <p class="text-gray-300">
+                        We're week 1 of building in public. Pricing is still being finalized based on development costs, 
+                        market research, and pilot customer feedback.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Open Source -->
+                <div class="bg-gray-800 rounded-2xl p-8 border-2 border-gray-600">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">🆓 Open Source</h3>
+                        <p class="text-3xl font-bold text-white mb-2">Free Forever</p>
+                        <p class="text-gray-300">AGPL v3 License</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-300">Full core framework</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-300">All analysis engines</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-300">Self-hosted deployment</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-300">CLI + API access</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-300">Community support (Discord)</span>
+                        </li>
+                    </ul>
+                    
+                    <p class="text-sm text-gray-400 mb-6">
+                        Perfect for: Individual developers, academic researchers, small teams, self-hosters
+                    </p>
+                    
+                    <a href="https://github.com/AUSPEXI/ai-philosophy-framework" 
+                       class="block w-full bg-white text-black text-center py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                       target="_blank">
+                        Clone from GitHub
+                    </a>
+                </div>
+
+                <!-- Beta Pilot -->
+                <div class="bg-gray-700 rounded-2xl p-8 border-2 border-white relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold">
+                            Limited Time
+                        </span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">🚀 Beta Pilot Program</h3>
+                        <p class="text-3xl font-bold text-white mb-2">Free for 6 Months</p>
+                        <p class="text-gray-300">Limited to first 10 companies</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-300">Hosted platform (web dashboard)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-300">Unlimited workflow analyses</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-300">Direct founder support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-300">Priority feature requests</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-300">Case study participation (optional)</span>
+                        </li>
+                    </ul>
+                    
+                    <p class="text-sm text-gray-400 mb-6">
+                        After 6 months: Pilot customers get 50% discount forever
+                    </p>
+                    
+                    <a href="#demo" 
+                       class="block w-full bg-white text-black text-center py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                        Apply for Beta Access
+                    </a>
+                </div>
+
+                <!-- Commercial -->
+                <div class="bg-gray-800 rounded-2xl p-8 border-2 border-gray-600">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">💼 Commercial Pricing</h3>
+                        <p class="text-lg text-gray-300 mb-2">Coming Q1 2026</p>
+                        <p class="text-sm text-gray-400">Estimated ranges (not final)</p>
+                    </div>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="border border-gray-600 rounded-lg p-4 bg-gray-700">
+                            <h4 class="font-semibold text-white mb-2">Professional Tier: ~$497/month</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Hosted platform</li>
+                                <li>• 50 analyses/month</li>
+                                <li>• Email support</li>
+                                <li>• Continuous monitoring</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border border-gray-600 rounded-lg p-4 bg-gray-700">
+                            <h4 class="font-semibold text-white mb-2">Enterprise Tier: ~$2,997/month+</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Unlimited analyses</li>
+                                <li>• On-prem deployment option</li>
+                                <li>• Custom integrations</li>
+                                <li>• SLA guarantees</li>
+                                <li>• Dedicated support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="#community" 
+                       class="block w-full bg-white text-black text-center py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                        Help Design Fair Pricing
+                    </a>
+                </div>
+            </div>
+
+            <!-- Community Ownership -->
+            <div class="mt-16 bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-8 text-white text-center border border-gray-600">
+                <h3 class="text-2xl font-bold mb-4">🤝 Community Ownership (Coming Q1 2026)</h3>
+                <p class="text-lg mb-6">Become a co-owner via equity crowdfunding</p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <ul class="text-left space-y-2">
+                            <li>• 20% of company equity reserved for community</li>
+                            <li>• Investment minimums: $100-$1,000</li>
+                            <li>• Voting rights on major decisions</li>
+                            <li>• Profit sharing (if profitable)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-sm">
+                            <strong>UK Companies House registered</strong><br>
+                            PBS Charter structure being finalized as project develops and funds allow.
+                        </p>
+                    </div>
+                </div>
+                
+                <form id="crowdfunding-form" class="max-w-md mx-auto" action="https://formspree.io/f/xpwoadoo" method="POST">
+                    <div class="flex gap-4">
+                        <input type="email" 
+                               name="email"
+                               placeholder="Join crowdfunding waitlist" 
+                               class="flex-1 px-4 py-3 rounded-lg text-gray-900 border border-gray-300"
+                               required>
+                        <button type="submit" 
+                                class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                            Join Waitlist
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Join the Movement</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    500+ people building AI that serves all stakeholders. Join the conversation, contribute code, 
+                    and help shape the future of ethical AI.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Discord -->
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-600 text-center">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Discord Community</h3>
+                    <p class="text-gray-300 mb-4">Real-time discussions, support, and collaboration</p>
+                    <a href="[DISCORD_INVITE_PLACEHOLDER]" 
+                       class="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors inline-block"
+                       target="_blank">
+                        Join Discord
+                    </a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-600 text-center">
+                    <div class="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Open Source</h3>
+                    <p class="text-gray-300 mb-4">Contribute code, report issues, and shape the roadmap</p>
+                    <a href="https://github.com/AUSPEXI/ai-philosophy-framework" 
+                       class="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors inline-block"
+                       target="_blank">
+                        View on GitHub
+                    </a>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-600 text-center">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Newsletter</h3>
+                    <p class="text-gray-300 mb-4">Weekly updates on progress, insights, and community</p>
+                    <form id="newsletter-form" class="space-y-3" action="https://formspree.io/f/xldorbwj" method="POST">
+                        <input type="email" 
+                               name="email"
+                               placeholder="Enter your email" 
+                               class="w-full px-4 py-2 rounded-lg text-gray-900 border border-gray-300"
+                               required>
+                        <button type="submit" 
+                                class="w-full bg-white text-black py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="text-center">
+                <h3 class="text-xl font-semibold mb-6">Follow Our Journey</h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/in/gwylym-pryce-owen-a0b450268" 
+                       class="text-gray-300 hover:text-white transition-colors"
+                       target="_blank">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://philosophyframework.substack.com/" 
+                       class="text-gray-300 hover:text-white transition-colors"
+                       target="_blank">
+                        <span class="sr-only">Substack</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+                        </svg>
+                    </a>
+                    <a href="https://discord.gg/dXwqC6e9" 
+                       class="text-gray-300 hover:text-white transition-colors"
+                       target="_blank">
+                        <span class="sr-only">Discord</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9554 2.4189-2.1568 2.4189Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://news.ycombinator.com/user?id=AIPhilosophyFW" 
+                       class="text-gray-300 hover:text-white transition-colors"
+                       target="_blank">
+                        <span class="sr-only">Hacker News</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.reddit.com/user/Head-Advertising5676/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" 
+                       class="text-gray-300 hover:text-white transition-colors"
+                       target="_blank">
+                        <span class="sr-only">Reddit</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Company -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">Φ</span>
+                        </div>
+                        <span class="text-xl font-bold">Philosophical AI</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Building AI that serves all stakeholders, not just shareholders.
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        Week 1 of building in public.<br>
+                        PBC structure forming.
+                    </p>
+                </div>
+
+                <!-- Product -->
+                <div>
+                    <h3 class="font-semibold text-white mb-4">Product</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="#demo" class="hover:text-white transition-colors">Demo</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="/docs" class="hover:text-white transition-colors">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Community -->
+                <div>
+                    <h3 class="font-semibold text-white mb-4">Community</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://github.com/AUSPEXI/ai-philosophy-framework" class="hover:text-white transition-colors" target="_blank">Open Source</a></li>
+                        <li><a href="#community" class="hover:text-white transition-colors">Join Community</a></li>
+                        <li><a href="https://github.com/AUSPEXI/ai-philosophy-framework/discussions" class="hover:text-white transition-colors" target="_blank">Discussions</a></li>
+                        <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold text-white mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="mailto:hopiumcalculator@gmail.com" class="hover:text-white transition-colors">Email Support</a></li>
+                        <li><a href="[DISCORD_INVITE_PLACEHOLDER]" class="hover:text-white transition-colors" target="_blank">Discord</a></li>
+                        <li><a href="https://github.com/AUSPEXI/ai-philosophy-framework/issues" class="hover:text-white transition-colors" target="_blank">Report Issues</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mission Statement -->
+            <div class="border-t border-gray-800 pt-8 mb-8">
+                <div class="bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-xl p-6 border border-blue-800/30">
+                    <h3 class="text-lg font-semibold text-blue-300 mb-3">Our Mission</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        To build AI systems that optimize for all stakeholders—customers, employees, communities, 
+                        and the environment—not just shareholders. We make philosophy operational through rigorous 
+                        analysis of AI workflows, ensuring every system serves the common good.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Legal Structure -->
+            <div class="border-t border-gray-800 pt-8 mb-8">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-800/50 rounded-lg p-4">
+                        <h4 class="font-semibold text-green-400 mb-2">🏛️ Public Benefit Corporation</h4>
+                        <p class="text-gray-400 text-sm">Legal structure forming - required to balance profit with public benefit</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-lg p-4">
+                        <h4 class="font-semibold text-blue-400 mb-2">🤝 Community Owned</h4>
+                        <p class="text-gray-400 text-sm">20% equity reserved for community via crowdfunding (Q1 2026)</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-lg p-4">
+                        <h4 class="font-semibold text-purple-400 mb-2">🔓 Open Source Core</h4>
+                        <p class="text-gray-400 text-sm">AGPL v3 license ensures philosophy stays accessible</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                    © 2024 Philosophical AI Framework. All rights reserved.
+                </div>
+                <div class="flex space-x-6 text-sm">
+                    <a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="mailto:hopiumcalculator@gmail.com" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handlers (placeholder - will be replaced with Formspree)
+        function handleFormSubmit(event, formType) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // Placeholder alert - will be replaced with actual form submission
+            switch(formType) {
+                case 'newsletter':
+                    alert('Thank you for subscribing! We\'ll send you weekly updates on our progress.');
+                    break;
+                case 'beta':
+                    alert('Welcome to the beta program! Redirecting you to the Philosophical AI Framework...');
+                    setTimeout(() => {
+                        window.location.href = 'philosophical_ai_framework_complete.html';
+                    }, 2000);
+                    break;
+                case 'crowdfunding':
+                    alert('Thank you for joining our crowdfunding waitlist! We\'ll notify you when it launches in Q1 2026.');
+                    break;
+            }
+            
+            event.target.reset();
+        }
+
+        // Attach form handlers
+        document.getElementById('newsletter-form').addEventListener('submit', (e) => handleFormSubmit(e, 'newsletter'));
+        document.getElementById('beta-form').addEventListener('submit', (e) => handleFormSubmit(e, 'beta'));
+        document.getElementById('crowdfunding-form').addEventListener('submit', (e) => handleFormSubmit(e, 'crowdfunding'));
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

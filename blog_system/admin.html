@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Admin - AI Philosophy Framework</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+        }
+        .bg-white {
+            background-color: #1a1a1a !important;
+            color: #ffffff !important;
+        }
+        .text-gray-900 {
+            color: #ffffff !important;
+        }
+        .text-gray-600 {
+            color: #cccccc !important;
+        }
+        .text-gray-500 {
+            color: #999999 !important;
+        }
+        .border-gray-200 {
+            border-color: #333333 !important;
+        }
+        .bg-gray-100 {
+            background-color: #2a2a2a !important;
+        }
+        .bg-gray-200 {
+            background-color: #333333 !important;
+        }
+        input, textarea, select {
+            background-color: #2a2a2a !important;
+            color: #ffffff !important;
+            border-color: #444444 !important;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #666666 !important;
+            box-shadow: 0 0 0 1px #666666 !important;
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-2">Blog Admin</h1>
+            <p class="text-gray-300">Manage your AI Philosophy Framework blog posts</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mb-8">
+            <div class="flex space-x-4">
+                <button onclick="showSection('posts')" id="postsTab" 
+                        class="tab-button bg-white text-black px-4 py-2 rounded-lg font-semibold">
+                    Manage Posts
+                </button>
+                <button onclick="showSection('create')" id="createTab" 
+                        class="tab-button bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-600">
+                    Create New Post
+                </button>
+                <a href="../blog.html" 
+                   class="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-600 transition-colors">
+                    View Blog
+                </a>
+            </div>
+        </div>
+
+        <!-- Posts Management Section -->
+        <div id="postsSection" class="section">
+            <h2 class="text-2xl font-bold mb-6">Existing Posts</h2>
+            <div id="postsList" class="space-y-4">
+                <!-- Posts will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Create Post Section -->
+        <div id="createSection" class="section hidden">
+            <h2 class="text-2xl font-bold mb-6">Create New Post</h2>
+            
+            <form id="createPostForm" class="space-y-6">
+                <div>
+                    <label for="title" class="block text-sm font-semibold mb-2">Title</label>
+                    <input type="text" id="title" name="title" required
+                           class="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-800 text-white focus:border-gray-400 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="category" class="block text-sm font-semibold mb-2">Category</label>
+                    <select id="category" name="category" required
+                            class="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-800 text-white focus:border-gray-400 focus:outline-none">
+                        <option value="Essays">Essays</option>
+                        <option value="Project Updates">Project Updates</option>
+                        <option value="Milestones">Milestones</option>
+                        <option value="Insights">Insights</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="author" class="block text-sm font-semibold mb-2">Author</label>
+                    <input type="text" id="author" name="author" value="Gwylym Pryce-Owen"
+                           class="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-800 text-white focus:border-gray-400 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="excerpt" class="block text-sm font-semibold mb-2">Excerpt</label>
+                    <textarea id="excerpt" name="excerpt" rows="3" required
+                              placeholder="Brief description of the post..."
+                              class="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-800 text-white focus:border-gray-400 focus:outline-none"></textarea>
+                </div>
+
+                <div>
+                    <label for="tags" class="block text-sm font-semibold mb-2">Tags (comma-separated)</label>
+                    <input type="text" id="tags" name="tags" 
+                           placeholder="AI, Philosophy, Framework"
+                           class="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-800 text-white focus:border-gray-400 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="content" class="block text-sm font-semibold mb-2">Content (HTML)</label>
+                    <textarea id="content" name="content" rows="15" required
+                              placeholder="<p>Your blog post content here...</p>"
+                              class="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-800 text-white focus:border-gray-400 focus:outline-none font-mono text-sm"></textarea>
+                </div>
+
+                <div class="flex space-x-4">
+                    <button type="submit" 
+                            class="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                        Create Post
+                    </button>
+                    <button type="button" onclick="previewPost()" 
+                            class="bg-gray-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-600 transition-colors">
+                        Preview
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold">Preview</h3>
+                    <button onclick="closePreview()" class="text-gray-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="previewContent" class="prose prose-invert max-w-none">
+                    <!-- Preview content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="blog.js"></script>
+    <script>
+        // Password protection
+        const ADMIN_PASSWORD = "philosophy2024"; // Change this to your desired password
+        let isAuthenticated = false;
+
+        function checkPassword() {
+            const password = prompt("Enter admin password:");
+            if (password === ADMIN_PASSWORD) {
+                isAuthenticated = true;
+                document.body.style.display = 'block';
+                return true;
+            } else if (password !== null) {
+                alert("Incorrect password. Access denied.");
+                window.location.href = '../blog.html';
+                return false;
+            } else {
+                window.location.href = '../blog.html';
+                return false;
+            }
+        }
+
+        // Hide content initially
+        document.body.style.display = 'none';
+
+        // Admin functionality
+        let currentEditingPost = null;
+
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-black');
+                btn.classList.add('bg-gray-700', 'text-white');
+            });
+            
+            // Show selected section
+            document.getElementById(section + 'Section').classList.remove('hidden');
+            document.getElementById(section + 'Tab').classList.add('bg-white', 'text-black');
+            document.getElementById(section + 'Tab').classList.remove('bg-gray-700', 'text-white');
+            
+            if (section === 'posts') {
+                loadPostsList();
+            }
+        }
+
+        function loadPostsList() {
+            const container = document.getElementById('postsList');
+            const posts = blogSystem.getAllPosts();
+            
+            container.innerHTML = posts.map(post => `
+                <div class="bg-gray-800 rounded-lg p-4 border border-gray-600">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold mb-2">${post.title}</h3>
+                            <p class="text-gray-300 text-sm mb-2">${post.excerpt}</p>
+                            <div class="flex items-center text-xs text-gray-400 space-x-4">
+                                <span>${post.category}</span>
+                                <span>${blogSystem.formatDate(post.date)}</span>
+                                <span>${post.tags.join(', ')}</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2 ml-4">
+                            <button onclick="editPost(${post.id})" 
+                                    class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700">
+                                Edit
+                            </button>
+                            <button onclick="deletePost(${post.id})" 
+                                    class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function editPost(postId) {
+            const post = blogSystem.posts.find(p => p.id === postId);
+            if (!post) return;
+            
+            currentEditingPost = post;
+            
+            // Fill form with post data
+            document.getElementById('title').value = post.title;
+            document.getElementById('category').value = post.category;
+            document.getElementById('author').value = post.author;
+            document.getElementById('excerpt').value = post.excerpt;
+            document.getElementById('tags').value = post.tags.join(', ');
+            document.getElementById('content').value = post.content;
+            
+            // Switch to create section (which becomes edit mode)
+            showSection('create');
+            document.getElementById('createTab').textContent = 'Edit Post';
+        }
+
+        function deletePost(postId) {
+            if (confirm('Are you sure you want to delete this post?')) {
+                blogSystem.posts = blogSystem.posts.filter(p => p.id !== postId);
+                blogSystem.savePosts();
+                loadPostsList();
+            }
+        }
+
+        function previewPost() {
+            const formData = new FormData(document.getElementById('createPostForm'));
+            const postData = {
+                title: formData.get('title'),
+                category: formData.get('category'),
+                author: formData.get('author'),
+                excerpt: formData.get('excerpt'),
+                content: formData.get('content'),
+                tags: formData.get('tags').split(',').map(tag => tag.trim()).filter(tag => tag)
+            };
+            
+            const previewContent = document.getElementById('previewContent');
+            previewContent.innerHTML = `
+                <div class="mb-4">
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        ${postData.category}
+                    </span>
+                </div>
+                <h1 class="text-3xl font-bold mb-4">${postData.title}</h1>
+                <div class="text-gray-400 text-sm mb-6">
+                    By ${postData.author} • ${new Date().toLocaleDateString()}
+                </div>
+                <div class="prose prose-invert max-w-none">
+                    ${postData.content}
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-600">
+                    <div class="flex flex-wrap gap-2">
+                        ${postData.tags.map(tag => `
+                            <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded text-sm">
+                                ${tag}
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('previewModal').classList.remove('hidden');
+        }
+
+        function closePreview() {
+            document.getElementById('previewModal').classList.add('hidden');
+        }
+
+        // Handle form submission
+        document.getElementById('createPostForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const postData = {
+                title: formData.get('title'),
+                category: formData.get('category'),
+                author: formData.get('author'),
+                excerpt: formData.get('excerpt'),
+                content: formData.get('content'),
+                tags: formData.get('tags').split(',').map(tag => tag.trim()).filter(tag => tag)
+            };
+            
+            if (currentEditingPost) {
+                // Update existing post
+                const index = blogSystem.posts.findIndex(p => p.id === currentEditingPost.id);
+                if (index !== -1) {
+                    blogSystem.posts[index] = { ...currentEditingPost, ...postData };
+                    blogSystem.savePosts();
+                }
+                currentEditingPost = null;
+                document.getElementById('createTab').textContent = 'Create New Post';
+            } else {
+                // Create new post
+                blogSystem.addPost(postData);
+            }
+            
+            // Reset form
+            e.target.reset();
+            document.getElementById('author').value = 'Gwylym Pryce-Owen';
+            
+            // Show success message
+            alert('Post saved successfully!');
+            
+            // Switch back to posts list
+            showSection('posts');
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            if (checkPassword()) {
+                showSection('posts');
+            }
+        });
+    </script>
+</body>
+</html>
