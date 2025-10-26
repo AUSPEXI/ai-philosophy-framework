@@ -39,6 +39,20 @@
         }
     </script>
     <style>
+        /* Reset margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
         /* Black and white theme */
         body {
             background-color: #000000 !important;
@@ -758,14 +772,15 @@
                     </ul>
                 </div>
 
-                <!-- Community -->
                 <div>
                     <h3 class="font-semibold text-white mb-4">Community</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://github.com/AUSPEXI/ai-philosophy-framework" class="hover:text-white transition-colors" target="_blank">Open Source</a></li>
-                        <li><a href="#community" class="hover:text-white transition-colors">Join Community</a></li>
-                        <li><a href="https://github.com/AUSPEXI/ai-philosophy-framework/discussions" class="hover:text-white transition-colors" target="_blank">Discussions</a></li>
-                        <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="https://github.com/AUSPEXI/ai-philosophy-framework" class="hover:text-white transition-colors" target="_blank">GitHub</a></li>
+                        <li><a href="https://discord.gg/dXwqC6e9" class="hover:text-white transition-colors" target="_blank">Discord</a></li>
+                        <li><a href="https://www.linkedin.com/in/gwylym-pryce-owen-a0b450268" class="hover:text-white transition-colors" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://philosophyframework.substack.com/" class="hover:text-white transition-colors" target="_blank">Newsletter</a></li>
+                        <li><a href="https://www.reddit.com/user/Head-Advertising5676/" class="hover:text-white transition-colors" target="_blank">Reddit</a></li>
+                        <li><a href="https://news.ycombinator.com/user?id=AIPhilosophyFW" class="hover:text-white transition-colors" target="_blank">Hacker News</a></li>
                     </ul>
                 </div>
 
@@ -774,7 +789,7 @@
                     <h3 class="font-semibold text-white mb-4">Contact</h3>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="mailto:hopiumcalculator@gmail.com" class="hover:text-white transition-colors">Email Support</a></li>
-                        <li><a href="[DISCORD_INVITE_PLACEHOLDER]" class="hover:text-white transition-colors" target="_blank">Discord</a></li>
+                        <li><a href="https://discord.gg/dXwqC6e9" class="hover:text-white transition-colors" target="_blank">Discord</a></li>
                         <li><a href="https://github.com/AUSPEXI/ai-philosophy-framework/issues" class="hover:text-white transition-colors" target="_blank">Report Issues</a></li>
                     </ul>
                 </div>
@@ -825,35 +840,6 @@
     </footer>
 
     <script>
-        // Form submission handlers (placeholder - will be replaced with Formspree)
-        function handleFormSubmit(event, formType) {
-            event.preventDefault();
-            const email = event.target.querySelector('input[type="email"]').value;
-            
-            // Placeholder alert - will be replaced with actual form submission
-            switch(formType) {
-                case 'newsletter':
-                    alert('Thank you for subscribing! We\'ll send you weekly updates on our progress.');
-                    break;
-                case 'beta':
-                    alert('Welcome to the beta program! Redirecting you to the Philosophical AI Framework...');
-                    setTimeout(() => {
-                        window.location.href = 'philosophical_ai_framework_complete.html';
-                    }, 2000);
-                    break;
-                case 'crowdfunding':
-                    alert('Thank you for joining our crowdfunding waitlist! We\'ll notify you when it launches in Q1 2026.');
-                    break;
-            }
-            
-            event.target.reset();
-        }
-
-        // Attach form handlers
-        document.getElementById('newsletter-form').addEventListener('submit', (e) => handleFormSubmit(e, 'newsletter'));
-        document.getElementById('beta-form').addEventListener('submit', (e) => handleFormSubmit(e, 'beta'));
-        document.getElementById('crowdfunding-form').addEventListener('submit', (e) => handleFormSubmit(e, 'crowdfunding'));
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -867,6 +853,10 @@
                 }
             });
         });
+
+        // Formspree handles form submissions natively
+        // After submission, Formspree shows their default thank you page
+        // To customize, add a hidden input: <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
     </script>
 </body>
 </html>
