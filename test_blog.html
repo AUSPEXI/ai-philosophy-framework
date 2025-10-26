@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white p-8">
+    <h1 class="text-3xl mb-8">Blog System Test</h1>
+    
+    <div id="status" class="mb-8">
+        <p>Checking blog system...</p>
+    </div>
+    
+    <div id="categoriesFilter" class="mb-8"></div>
+    <div id="blogPosts" class="space-y-4"></div>
+
+    <script src="blog_system/blog.js"></script>
+    <script>
+        setTimeout(() => {
+            const status = document.getElementById('status');
+            status.innerHTML = `
+                <p>BlogSystem loaded: ${typeof blogSystem !== 'undefined' ? '✅ YES' : '❌ NO'}</p>
+                <p>Posts count: ${typeof blogSystem !== 'undefined' ? blogSystem.getAllPosts().length : 'N/A'}</p>
+                <p>Default posts: ${typeof blogSystem !== 'undefined' ? JSON.stringify(blogSystem.getDefaultPosts().map(p => p.title)) : 'N/A'}</p>
+            `;
+            
+            if (typeof blogSystem !== 'undefined') {
+                console.log('Posts:', blogSystem.getAllPosts());
+                console.log('Categories:', blogSystem.categories);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

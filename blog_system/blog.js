@@ -324,13 +324,13 @@ class BlogSystem {
                 <div class="flex items-center justify-between">
                     <div class="flex flex-wrap gap-2">
                         ${post.tags.map(tag => `
-                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                            <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs">
                                 ${tag}
                             </span>
                         `).join('')}
                     </div>
                     <a href="#" onclick="blogSystem.showPost('${post.slug}')" 
-                       class="text-gray-900 font-semibold hover:text-gray-700 transition-colors">
+                       class="text-blue-400 font-semibold hover:text-blue-300 transition-colors">
                         Read More →
                     </a>
                 </div>
@@ -427,12 +427,12 @@ class BlogSystem {
     filterByCategory(category) {
         // Update active button
         document.querySelectorAll('.category-filter').forEach(btn => {
-            btn.classList.remove('active', 'bg-gray-900', 'text-white');
-            btn.classList.add('bg-gray-200', 'text-gray-700');
+            btn.classList.remove('active', 'bg-blue-600', 'text-white');
+            btn.classList.add('bg-gray-800', 'text-gray-300');
         });
         
-        event.target.classList.add('active', 'bg-gray-900', 'text-white');
-        event.target.classList.remove('bg-gray-200', 'text-gray-700');
+        event.target.classList.add('active', 'bg-blue-600', 'text-white');
+        event.target.classList.remove('bg-gray-800', 'text-gray-300');
         
         // Render filtered posts
         this.renderPostsList('blogPosts', category);
@@ -441,11 +441,22 @@ class BlogSystem {
 
 // Initialize blog system
 const blogSystem = new BlogSystem();
+console.log('🎯 Blog System Initialized');
+console.log('📝 Posts loaded:', blogSystem.getAllPosts().length);
+console.log('📚 Posts:', blogSystem.getAllPosts().map(p => p.title));
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 DOM Loaded, checking for containers...');
+    console.log('📦 blogPosts container:', document.getElementById('blogPosts'));
+    console.log('🏷️  categoriesFilter container:', document.getElementById('categoriesFilter'));
+    
     if (document.getElementById('blogPosts')) {
+        console.log('✅ Rendering categories and posts...');
         blogSystem.renderCategoriesFilter('categoriesFilter');
         blogSystem.renderPostsList('blogPosts');
+        console.log('✨ Rendering complete!');
+    } else {
+        console.error('❌ blogPosts container not found!');
     }
 });
