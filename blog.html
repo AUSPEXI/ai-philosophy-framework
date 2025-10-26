@@ -3,341 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - AI Philosophy Framework</title>
+    <title>Blog - Philosophical AI Framework</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* CSS Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            overflow-x: hidden;
-        }
-        
-        /* Theme styles */
-        body {
-            background-color: #000000 !important;
-            color: #ffffff !important;
-        }
-        .bg-white {
-            background-color: #1a1a1a !important;
-            color: #ffffff !important;
-        }
-        .text-gray-900 {
-            color: #ffffff !important;
-        }
-        .text-gray-600 {
-            color: #cccccc !important;
-        }
-        .text-gray-500 {
-            color: #999999 !important;
-        }
-        .text-gray-700 {
-            color: #cccccc !important;
-        }
-        .border-gray-200 {
-            border-color: #333333 !important;
-        }
-        .bg-gray-100 {
-            background-color: #2a2a2a !important;
-        }
-        .bg-gray-200 {
-            background-color: #333333 !important;
-        }
-        .bg-gray-800 {
-            background-color: #1a1a1a !important;
-        }
-        .hover\:shadow-md:hover {
-            box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06) !important;
-        }
-        .prose {
-            color: #ffffff !important;
-        }
-        .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-            color: #ffffff !important;
-        }
-        .prose p {
-            color: #cccccc !important;
-        }
-        .prose ul li {
-            color: #cccccc !important;
-        }
-        .prose strong {
-            color: #ffffff !important;
-        }
-    </style>
 </head>
 <body class="bg-black text-white">
-    <!-- Navigation -->
-    <nav class="bg-black border-b border-gray-800 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-2">
-                    <a href="/" class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-sm">Φ</span>
-                        </div>
-                        <span class="text-xl font-bold">Philosophical AI</span>
-                    </a>
+    <nav class="border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
+                    <span class="font-bold text-sm">Φ</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="/demo.html" class="bg-white/20 text-white px-3 py-1 rounded-md hover:bg-white/30 transition-colors font-semibold border border-gray-500">🚀 Framework</a>
-                    <a href="/#how-it-works" class="text-gray-300 hover:text-white transition-colors">How It Works</a>
-                    <a href="/#demo" class="text-gray-300 hover:text-white transition-colors">Demo</a>
-                    <a href="/#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
-                    <a href="/#community" class="text-gray-300 hover:text-white transition-colors">Community</a>
-                    <a href="/blog.html" class="text-gray-300 hover:text-white transition-colors">Blog</a>
-                    <a href="/roadmap.html" class="text-gray-300 hover:text-white transition-colors">Roadmap</a>
-                    <a href="/docs.html" class="text-gray-300 hover:text-white transition-colors">Docs</a>
-                    <a href="https://github.com/AUSPEXI/ai-philosophy-framework" class="text-gray-300 hover:text-white transition-colors" target="_blank">GitHub</a>
-                </div>
+                <span class="text-xl font-bold">Philosophical AI</span>
             </div>
-        </div>
-                    
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
+            <div class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-gray-300">Home</a>
+                <a href="/demo.html" class="hover:text-gray-300">Framework</a>
+                <a href="/roadmap.html" class="hover:text-gray-300">Roadmap</a>
+                <a href="/blog.html" class="text-blue-400">Blog</a>
             </div>
         </div>
     </nav>
-    
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 z-50 md:hidden">
-        <div class="flex flex-col h-full">
-            <!-- Mobile Menu Header -->
-            <div class="flex items-center justify-between p-4 border-b border-gray-800">
-                <div class="flex items-center space-x-2">
-                    <a href="/" class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-sm">Φ</span>
-                        </div>
-                        <span class="text-xl font-bold">Philosophical AI</span>
-                    </a>
-                </div>
-                <button id="mobile-menu-close" class="text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
-            
-            <!-- Mobile Menu Items -->
-            <div class="flex-1 overflow-y-auto p-4">
-                <div class="space-y-1">
-                    <a href="/demo.html" class="block bg-white/20 text-white px-4 py-3 rounded-lg hover:bg-white/30 transition-colors font-semibold border border-gray-500 text-center mb-4">
-                        🚀 Framework
-                    </a>
-                    <a href="/#how-it-works" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
-                        How It Works
-                    </a>
-                    <a href="/#demo" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
-                        Demo
-                    </a>
-                    <a href="/#pricing" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
-                        Pricing
-                    </a>
-                    <a href="/#community" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
-                        Community
-                    </a>
-                    <a href="/blog.html" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
-                        Blog
-                    </a>
-                    <a href="/roadmap.html" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
-                        Roadmap
-                    </a>
-                    <a href="/docs.html" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
-                        Docs
-                    </a>
-                    <a href="https://github.com/AUSPEXI/ai-philosophy-framework" target="_blank" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
-                        GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Hero Section -->
     <section class="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                Philosophy in <span class="text-white">Practice</span>
-            </h1>
-            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Essays, insights, and updates from the journey of building an AI philosophy framework. 
-                Deep dives into the intersection of artificial intelligence and philosophical thinking.
-            </p>
-            
-            <!-- Admin Link (for development) -->
-            <div class="mb-8">
-                <a href="blog-admin.html" 
-                   class="bg-gray-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-700 transition-colors">
-                    Admin Panel
-                </a>
-            </div>
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">Philosophy in Practice</h1>
+            <p class="text-xl text-gray-300">Essays and insights from building an AI philosophy framework</p>
         </div>
     </section>
 
-    <!-- Blog Content -->
-    <section class="py-16 bg-black">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Categories Filter -->
-            <div id="categoriesFilter" class="mb-8">
-                <!-- Categories will be loaded here -->
-            </div>
-
-            <!-- Blog Posts -->
-            <div id="blogPosts" class="grid gap-8">
-                <!-- Posts will be loaded here -->
-            </div>
-
-            <!-- Loading State -->
-            <div id="loadingState" class="text-center py-12">
-                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
-                <p class="text-gray-400">Loading posts...</p>
-            </div>
-
-            <!-- Empty State -->
-            <div id="emptyState" class="text-center py-12 hidden">
-                <div class="text-gray-400 mb-4">
-                    <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                    </svg>
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4 space-y-8">
+            
+            <article class="bg-gray-800/50 rounded-xl p-8 border border-gray-700">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="bg-blue-600 px-3 py-1 rounded-full text-sm font-semibold">Essays</span>
+                    <time class="text-gray-400 text-sm">October 12, 2025</time>
                 </div>
-                <h3 class="text-xl font-semibold text-white mb-2">No posts yet</h3>
-                <p class="text-gray-400">Check back soon for new content!</p>
-            </div>
+                <h2 class="text-2xl font-bold mb-4">
+                    <a href="/blog/redefining-ai-horizon.html" class="hover:text-blue-400">
+                        Redefining AI's Horizon: Purposeful Intelligence as the True Competitive Edge
+                    </a>
+                </h2>
+                <p class="text-gray-300 mb-4">What if the key to unlocking AI's full business potential lies not in escalating complexity, but in refining our understanding of its core objectives?</p>
+                <a href="/blog/redefining-ai-horizon.html" class="text-blue-400 font-semibold hover:text-blue-300">Read More →</a>
+            </article>
+
+            <article class="bg-gray-800/50 rounded-xl p-8 border border-gray-700">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="bg-purple-600 px-3 py-1 rounded-full text-sm font-semibold">Announcements</span>
+                    <time class="text-gray-400 text-sm">October 20, 2025</time>
+                </div>
+                <h2 class="text-2xl font-bold mb-4">
+                    <a href="/blog/calling-lawyers.html" class="hover:text-blue-400">
+                        Calling All Lawyers: Help Build the Legal Structure for Mission-Driven AI
+                    </a>
+                </h2>
+                <p class="text-gray-300 mb-4">I'm building something that must survive attempts to acquire, corrupt, or destroy it. That requires legal innovation.</p>
+                <a href="/blog/calling-lawyers.html" class="text-blue-400 font-semibold hover:text-blue-300">Read More →</a>
+            </article>
+
+            <article class="bg-gray-800/50 rounded-xl p-8 border border-gray-700">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="bg-blue-600 px-3 py-1 rounded-full text-sm font-semibold">Essays</span>
+                    <time class="text-gray-400 text-sm">October 16, 2025</time>
+                </div>
+                <h2 class="text-2xl font-bold mb-4">
+                    <a href="/blog/obelisks-beyond-spacetime.html" class="hover:text-blue-400">
+                        Obelisks Beyond Space-Time: Consciousness, Intelligence, and the Next Frontier
+                    </a>
+                </h2>
+                <p class="text-gray-300 mb-4">Donald Hoffman argues that space-time is not fundamental — consciousness is. What does this mean for artificial intelligence?</p>
+                <a href="/blog/obelisks-beyond-spacetime.html" class="text-blue-400 font-semibold hover:text-blue-300">Read More →</a>
+            </article>
+
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="py-16 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Stay Updated</h2>
-            <p class="text-gray-300 mb-8">
-                Get the latest essays and project updates delivered to your inbox.
-            </p>
-            
-            <form action="https://formspree.io/f/xldorbwj" method="POST" class="max-w-md mx-auto">
-                <div class="flex gap-4">
-                    <input type="email" name="email" placeholder="Enter your email" required
-                           class="flex-1 px-4 py-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:border-gray-400 focus:outline-none">
-                    <button type="submit" 
-                            class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
-                        Subscribe
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-lg font-semibold text-white mb-4">AI Philosophy Framework</h3>
-                    <p class="text-gray-400 mb-4">
-                        Bridging artificial intelligence and philosophical understanding through systematic analysis.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="text-sm font-semibold text-white mb-4">Resources</h4>
-                    <ul class="space-y-2">
-                        <li><a href="docs.html" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
-                        <li><a href="https://github.com/AUSPEXI/ai-philosophy-framework" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
-                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-sm font-semibold text-white mb-4">Connect</h4>
-                    <ul class="space-y-2">
-                        <li><a href="https://www.linkedin.com/in/gwylym-pryce-owen-a0b450268" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
-                        <li><a href="https://discord.gg/dXwqC6e9" class="text-gray-400 hover:text-white transition-colors">Discord</a></li>
-                        <li><a href="https://philosophyframework.substack.com/" class="text-gray-400 hover:text-white transition-colors">Substack</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 AI Philosophy Framework. All rights reserved.</p>
-            </div>
+    <footer class="bg-black border-t border-gray-800 mt-16 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-400">
+            <p>© 2025 Philosophical AI Framework</p>
         </div>
     </footer>
-
-    <!-- Post Modal -->
-    <div id="postModal" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center p-4">
-        <div id="modalContent" class="w-full max-w-4xl max-h-[90vh] overflow-y-auto">
-            <!-- Post content will be inserted here -->
-        </div>
-    </div>
-
-    <script src="blog.js"></script>
-    <script>
-        // Hide loading state once posts are loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                document.getElementById('loadingState').style.display = 'none';
-                
-                // Show empty state if no posts
-                if (blogSystem.getAllPosts().length === 0) {
-                    document.getElementById('emptyState').classList.remove('hidden');
-                }
-            }, 500);
-        });
-
-        // Close modal when clicking outside
-        document.getElementById('postModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                blogSystem.closePost();
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                blogSystem.closePost();
-            }
-        });
-    </script>
-<script>
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            });
-        }
-
-        if (mobileMenuClose) {
-            mobileMenuClose.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                document.body.style.overflow = '';
-            });
-        }
-
-        // Close mobile menu when clicking nav links
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                document.body.style.overflow = '';
-            });
-        });
-</script>
 </body>
 </html>
