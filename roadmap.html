@@ -75,17 +75,83 @@
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-8">
+                    <a href="/demo.html" class="bg-white/20 text-white px-3 py-1 rounded-md hover:bg-white/30 transition-colors font-semibold border border-gray-500">🚀 Framework</a>
                     <a href="/#how-it-works" class="text-gray-300 hover:text-white transition-colors">How It Works</a>
-                    <a href="/demo.html" class="text-gray-300 hover:text-white transition-colors">Framework Demo</a>
-                    <a href="/roadmap.html" class="text-gray-300 hover:text-white transition-colors">Roadmap</a>
-                    <a href="https://github.com/AUSPEXI/ai-philosophy-framework/wiki" class="text-gray-300 hover:text-white transition-colors" target="_blank">Docs</a>
+                    <a href="/#demo" class="text-gray-300 hover:text-white transition-colors">Demo</a>
+                    <a href="/#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
+                    <a href="/#community" class="text-gray-300 hover:text-white transition-colors">Community</a>
                     <a href="/blog.html" class="text-gray-300 hover:text-white transition-colors">Blog</a>
+                    <a href="/roadmap.html" class="text-gray-300 hover:text-white transition-colors">Roadmap</a>
+                    <a href="/docs.html" class="text-gray-300 hover:text-white transition-colors">Docs</a>
                     <a href="https://github.com/AUSPEXI/ai-philosophy-framework" class="text-gray-300 hover:text-white transition-colors" target="_blank">GitHub</a>
-                    <a href="/#beta-signup" class="bg-white/20 text-white px-3 py-1 rounded-md hover:bg-white/30 transition-colors font-semibold border border-gray-500">Apply for Beta</a>
                 </div>
             </div>
         </div>
+                    
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 z-50 md:hidden">
+        <div class="flex flex-col h-full">
+            <!-- Mobile Menu Header -->
+            <div class="flex items-center justify-between p-4 border-b border-gray-800">
+                <div class="flex items-center space-x-2">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">Φ</span>
+                        </div>
+                        <span class="text-xl font-bold">Philosophical AI</span>
+                    </a>
+                </div>
+                <button id="mobile-menu-close" class="text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Items -->
+            <div class="flex-1 overflow-y-auto p-4">
+                <div class="space-y-1">
+                    <a href="/demo.html" class="block bg-white/20 text-white px-4 py-3 rounded-lg hover:bg-white/30 transition-colors font-semibold border border-gray-500 text-center mb-4">
+                        🚀 Framework
+                    </a>
+                    <a href="/#how-it-works" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                        How It Works
+                    </a>
+                    <a href="/#demo" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                        Demo
+                    </a>
+                    <a href="/#pricing" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                        Pricing
+                    </a>
+                    <a href="/#community" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                        Community
+                    </a>
+                    <a href="/blog.html" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                        Blog
+                    </a>
+                    <a href="/roadmap.html" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                        Roadmap
+                    </a>
+                    <a href="/docs.html" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                        Docs
+                    </a>
+                    <a href="https://github.com/AUSPEXI/ai-philosophy-framework" target="_blank" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero -->
     <section class="pt-20 pb-12 bg-gradient-to-b from-black to-gray-900">
@@ -329,6 +395,44 @@
                     </div>
                 </div>
 
+                <!-- Q1-Q2 2027 -->
+                <div class="timeline-item">
+                    <div class="bg-gradient-to-r from-purple-900/50 to-blue-900/50 rounded-xl p-6 border border-purple-700/50">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold">Q1-Q2 2027: Academic Framework Marketplace</h3>
+                            <span class="bg-purple-600 text-white text-sm px-3 py-1 rounded-full">Research</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-2">Marketplace Launch</h4>
+                                <ul class="space-y-1 text-gray-300 text-sm">
+                                    <li>• Academic framework submission platform</li>
+                                    <li>• Peer review and validation system</li>
+                                    <li>• Citation and impact tracking</li>
+                                    <li>• Revenue sharing for framework creators</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-300 mb-2">Academic Partnerships</h4>
+                                <ul class="space-y-1 text-gray-300 text-sm">
+                                    <li>• Oxford, MIT, Stanford, Cambridge, Harvard engagement</li>
+                                    <li>• Philosophy department partnerships</li>
+                                    <li>• Research grant integration</li>
+                                    <li>• Academic advisory board formation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-lg p-4 border border-purple-700/50">
+                            <p class="text-gray-300 text-sm mb-3">
+                                <strong>Strategic Moat:</strong> Academic institutions provide intellectual legitimacy while building dependency on our platform. Researchers monetize their frameworks, enterprises gain access to cutting-edge philosophical analysis, and we become the essential marketplace connecting both.
+                            </p>
+                            <p class="text-gray-400 text-xs">
+                                Frameworks cover specialized domains (medical AI ethics, financial system alignment, environmental impact analysis) that enterprises cannot build in-house. Citation tracking provides measurable academic impact beyond traditional publishing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 2027+ -->
                 <div class="timeline-item">
                     <div class="bg-gradient-to-r from-green-900/50 to-blue-900/50 rounded-xl p-6 border border-green-700/50">
@@ -480,6 +584,51 @@
                         Investment Inquiry
                     </a>
                 </div>
+
+                <!-- For Academic Institutions -->
+                <div class="bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl p-8 border border-purple-700/50">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-400">For Academic Institutions</h3>
+                    <p class="text-gray-300 mb-6">
+                        Transform philosophical research into real-world impact. Monetize frameworks, track citations globally, and demonstrate measurable influence on AI governance.
+                    </p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span class="text-gray-300">Revenue sharing for published frameworks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span class="text-gray-300">Global citation and impact tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span class="text-gray-300">Alternative funding streams for research</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span class="text-gray-300">Real-world validation of philosophical work</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span class="text-gray-300">Specialized domain frameworks (medical, financial, environmental AI ethics)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span class="text-gray-300">Joint research initiatives and grant opportunities</span>
+                        </li>
+                    </ul>
+                    <div class="bg-purple-900/20 rounded-lg p-4 mb-6 border border-purple-700/30">
+                        <p class="text-sm text-gray-300 mb-2">
+                            <strong>Why This Matters:</strong> Philosophy departments face funding pressures while AI systems lack rigorous philosophical grounding. Our marketplace bridges this gap—academics gain income and impact, enterprises access cutting-edge frameworks they cannot build internally.
+                        </p>
+                        <p class="text-xs text-gray-400">
+                            Early partners from Oxford, MIT, Stanford, Cambridge, and Harvard will shape marketplace standards and gain first-mover advantage in this emerging field.
+                        </p>
+                    </div>
+                    <a href="mailto:academic@auspexi.com" class="block w-full bg-purple-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Academic Partnership Inquiry
+                    </a>
+                </div>
             </div>
 
             <div class="bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-xl p-8 border border-blue-700/50 text-center">
@@ -581,5 +730,34 @@
             });
         });
     </script>
+<script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Close mobile menu when clicking nav links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+        });
+</script>
 </body>
 </html>

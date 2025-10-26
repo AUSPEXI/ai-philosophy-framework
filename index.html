@@ -87,23 +87,85 @@
             <!-- Navigation -->
             <nav class="flex items-center justify-between mb-16">
                 <div class="flex items-center space-x-2">
-                    <a href="/" class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-gray-600 to-gray-800 rounded-lg flex items-center justify-center border border-gray-500">
-                            <span class="text-white font-bold text-sm">Φ</span>
-                        </div>
-                        <span class="text-xl font-bold">Philosophical AI</span>
-                    </a>
+                    <div class="w-8 h-8 bg-gradient-to-r from-gray-600 to-gray-800 rounded-lg flex items-center justify-center border border-gray-500">
+                        <span class="text-white font-bold text-sm">Φ</span>
+                    </div>
+                    <span class="text-xl font-bold">Philosophical AI</span>
                 </div>
+                
+                <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
+                    <a href="/demo.html" class="bg-white/20 text-white px-3 py-1 rounded-md hover:bg-white/30 transition-colors font-semibold border border-gray-500">🚀 Framework</a>
                     <a href="#how-it-works" class="hover:text-gray-300 transition-colors">How It Works</a>
-                    <a href="/demo.html" class="hover:text-gray-300 transition-colors">Framework Demo</a>
-                    <a href="/roadmap.html" class="hover:text-gray-300 transition-colors">Roadmap</a>
-                    <a href="https://github.com/AUSPEXI/ai-philosophy-framework/wiki" class="hover:text-gray-300 transition-colors" target="_blank">Docs</a>
+                    <a href="#demo" class="hover:text-gray-300 transition-colors">Demo</a>
+                    <a href="#pricing" class="hover:text-gray-300 transition-colors">Pricing</a>
+                    <a href="#community" class="hover:text-gray-300 transition-colors">Community</a>
                     <a href="/blog.html" class="hover:text-gray-300 transition-colors">Blog</a>
+                    <a href="/roadmap.html" class="hover:text-gray-300 transition-colors">Roadmap</a>
+                    <a href="/docs.html" class="hover:text-gray-300 transition-colors">Docs</a>
                     <a href="https://github.com/AUSPEXI/ai-philosophy-framework" class="hover:text-gray-300 transition-colors" target="_blank">GitHub</a>
-                    <a href="#beta-signup" class="bg-white/20 text-white px-3 py-1 rounded-md hover:bg-white/30 transition-colors font-semibold border border-gray-500">Apply for Beta</a>
                 </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </nav>
+            
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 z-50 md:hidden">
+                <div class="flex flex-col h-full">
+                    <!-- Mobile Menu Header -->
+                    <div class="flex items-center justify-between p-4 border-b border-gray-800">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-gradient-to-r from-gray-600 to-gray-800 rounded-lg flex items-center justify-center border border-gray-500">
+                                <span class="text-white font-bold text-sm">Φ</span>
+                            </div>
+                            <span class="text-xl font-bold">Philosophical AI</span>
+                        </div>
+                        <button id="mobile-menu-close" class="text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Mobile Menu Items -->
+                    <div class="flex-1 overflow-y-auto p-4">
+                        <div class="space-y-1">
+                            <a href="/demo.html" class="block bg-white/20 text-white px-4 py-3 rounded-lg hover:bg-white/30 transition-colors font-semibold border border-gray-500 text-center mb-4">
+                                🚀 Framework
+                            </a>
+                            <a href="#how-it-works" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                                How It Works
+                            </a>
+                            <a href="#demo" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                                Demo
+                            </a>
+                            <a href="#pricing" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                                Pricing
+                            </a>
+                            <a href="#community" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                                Community
+                            </a>
+                            <a href="/blog.html" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                                Blog
+                            </a>
+                            <a href="/roadmap.html" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                                Roadmap
+                            </a>
+                            <a href="/docs.html" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                                Docs
+                            </a>
+                            <a href="https://github.com/AUSPEXI/ai-philosophy-framework" target="_blank" class="block text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors mobile-nav-link">
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Week 1 Badges -->
             <div class="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
@@ -135,7 +197,7 @@
 
                     <!-- CTAs -->
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="/demo.html" 
+                        <a href="philosophical_ai_framework_complete.html" 
                            class="bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors flex items-center justify-center shadow-lg border border-gray-300">
                             🚀 Try Framework Now
                         </a>
@@ -344,7 +406,7 @@
                         <li>• Web dashboard (fully functional)</li>
                         <li>• Interactive philosophical analysis</li>
                         <li>• n8n workflow upload & analysis</li>
-                        <li>• <a href="/demo.html" class="underline font-semibold text-white hover:text-gray-300">Try the Framework →</a></li>
+                        <li>• <a href="philosophical_ai_framework_complete.html" class="underline font-semibold text-white hover:text-gray-300">Try the Framework →</a></li>
                     </ul>
                 </div>
 
@@ -769,7 +831,7 @@
                         <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
                         <li><a href="#demo" class="hover:text-white transition-colors">Demo</a></li>
                         <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
-                        <li><a href="/roadmap.html" class="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="/docs" class="hover:text-white transition-colors">Documentation</a></li>
                     </ul>
                 </div>
 
@@ -829,7 +891,7 @@
             <!-- Bottom -->
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <div class="text-gray-400 text-sm mb-4 md:mb-0">
-                    © 2025 Philosophical AI Framework. All rights reserved.
+                    © 2024 Philosophical AI Framework. All rights reserved.
                 </div>
                 <div class="flex space-x-6 text-sm">
                     <a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
@@ -852,6 +914,34 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Close mobile menu when clicking nav links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
             });
         });
 
