@@ -763,123 +763,125 @@
         });
 
         // ===== CONTACT MODAL SYSTEM =====
-        const modal = document.getElementById('contactModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalForm = document.getElementById('modalForm');
-        const inquiryTypeInput = document.getElementById('inquiryType');
-        const closeModalBtn = document.getElementById('closeModal');
-        const successMessage = document.getElementById('successMessage');
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('contactModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalForm = document.getElementById('modalForm');
+            const inquiryTypeInput = document.getElementById('inquiryType');
+            const closeModalBtn = document.getElementById('closeModal');
+            const successMessage = document.getElementById('successMessage');
 
-        // Form configurations with Formspree IDs
-        const formConfigs = {
-            enterprise: {
-                id: 'mwpwlkye',
-                title: 'Enterprise Inquiry',
-                description: 'Tell us about your enterprise needs'
-            },
-            platform: {
-                id: 'mrbopgjg',
-                title: 'Platform Partnership Inquiry',
-                description: 'Interested in integrating our framework?'
-            },
-            regulatory: {
-                id: 'mnnopqwj',
-                title: 'Regulatory Inquiry',
-                description: 'Questions about compliance and standards?'
-            },
-            investment: {
-                id: 'xjkpyvly',
-                title: 'Investment Inquiry',
-                description: 'Interested in mission-aligned investment?'
-            },
-            academic: {
-                id: 'manleyvj',
-                title: 'Academic Partnership Inquiry',
-                description: 'Collaborate on research and frameworks?'
-            },
-            sales: {
-                id: 'xqagpknl',
-                title: 'General Partnership Inquiry',
-                description: 'How can we work together?'
-            }
-        };
-
-        // Open modal function
-        function openContactModal(type) {
-            const config = formConfigs[type];
-            if (!config) return;
-
-            // Set modal content
-            modalTitle.textContent = config.title;
-            document.getElementById('modalDescription').textContent = config.description;
-            inquiryTypeInput.value = type;
-            
-            // Update form action
-            modalForm.action = `https://formspree.io/f/${config.id}`;
-            
-            // Show modal
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Close modal function
-        function closeContactModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-            modalForm.reset();
-            successMessage.classList.add('hidden');
-        }
-
-        // Close modal on background click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeContactModal();
-        });
-
-        // Close button
-        closeModalBtn.addEventListener('click', closeContactModal);
-
-        // Form submission
-        modalForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(modalForm);
-            const submitBtn = modalForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            try {
-                const response = await fetch(modalForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    modalForm.classList.add('hidden');
-                    successMessage.classList.remove('hidden');
-                    setTimeout(() => {
-                        closeContactModal();
-                    }, 3000);
-                } else {
-                    alert('Something went wrong. Please try emailing us directly.');
+            // Form configurations with Formspree IDs
+            const formConfigs = {
+                enterprise: {
+                    id: 'mwpwlkye',
+                    title: 'Enterprise Inquiry',
+                    description: 'Tell us about your enterprise needs'
+                },
+                platform: {
+                    id: 'mrbopgjg',
+                    title: 'Platform Partnership Inquiry',
+                    description: 'Interested in integrating our framework?'
+                },
+                regulatory: {
+                    id: 'mnnopqwj',
+                    title: 'Regulatory Inquiry',
+                    description: 'Questions about compliance and standards?'
+                },
+                investment: {
+                    id: 'xjkpyvly',
+                    title: 'Investment Inquiry',
+                    description: 'Interested in mission-aligned investment?'
+                },
+                academic: {
+                    id: 'manleyvj',
+                    title: 'Academic Partnership Inquiry',
+                    description: 'Collaborate on research and frameworks?'
+                },
+                sales: {
+                    id: 'xqagpknl',
+                    title: 'General Partnership Inquiry',
+                    description: 'How can we work together?'
                 }
-            } catch (error) {
-                alert('Something went wrong. Please try emailing us directly.');
-            } finally {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        });
+            };
 
-        // Escape key to close
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeContactModal();
-            }
+            // Make function globally accessible
+            window.openContactModal = function(type) {
+                const config = formConfigs[type];
+                if (!config) return;
+
+                // Set modal content
+                modalTitle.textContent = config.title;
+                document.getElementById('modalDescription').textContent = config.description;
+                inquiryTypeInput.value = type;
+                
+                // Update form action
+                modalForm.action = `https://formspree.io/f/${config.id}`;
+                
+                // Show modal
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+
+            // Close modal function
+            window.closeContactModal = function() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+                modalForm.reset();
+                successMessage.classList.add('hidden');
+            };
+
+            // Close modal on background click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeContactModal();
+            });
+
+            // Close button
+            closeModalBtn.addEventListener('click', closeContactModal);
+
+            // Form submission
+            modalForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(modalForm);
+                const submitBtn = modalForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                try {
+                    const response = await fetch(modalForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        modalForm.classList.add('hidden');
+                        successMessage.classList.remove('hidden');
+                        setTimeout(() => {
+                            closeContactModal();
+                        }, 3000);
+                    } else {
+                        alert('Something went wrong. Please try emailing us directly.');
+                    }
+                } catch (error) {
+                    alert('Something went wrong. Please try emailing us directly.');
+                } finally {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            });
+
+            // Escape key to close
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeContactModal();
+                }
+            });
         });
 </script>
 
