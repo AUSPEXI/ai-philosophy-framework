@@ -493,9 +493,9 @@
                             <span class="text-gray-300">Preferred pricing and priority support</span>
                         </li>
                     </ul>
-                    <a href="mailto:enterprise@auspexi.com" title="Email: enterprise@auspexi.com" class="block w-full bg-blue-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    <button onclick="openContactModal('enterprise')" class="block w-full bg-blue-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
                         Enterprise Inquiry
-                    </a>
+                    </button>
                 </div>
 
                 <!-- For Platforms -->
@@ -522,9 +522,9 @@
                             <span class="text-gray-300">Technical integration and API support</span>
                         </li>
                     </ul>
-                    <a href="mailto:platform@auspexi.com" title="Email: platform@auspexi.com" class="block w-full bg-purple-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                    <button onclick="openContactModal('platform')" class="block w-full bg-purple-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors cursor-pointer">
                         Platform Partnership Inquiry
-                    </a>
+                    </button>
                 </div>
 
                 <!-- For Regulators -->
@@ -551,9 +551,9 @@
                             <span class="text-gray-300">Pilot programs and research collaboration</span>
                         </li>
                     </ul>
-                    <a href="mailto:regulatory@auspexi.com" title="Email: regulatory@auspexi.com" class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                    <button onclick="openContactModal('regulatory')" class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors cursor-pointer">
                         Regulatory Inquiry
-                    </a>
+                    </button>
                 </div>
 
                 <!-- For Investors -->
@@ -580,9 +580,9 @@
                             <span class="text-gray-300">Impact + returns aligned</span>
                         </li>
                     </ul>
-                    <a href="mailto:investment@auspexi.com" title="Email: investment@auspexi.com" class="block w-full bg-yellow-600 text-black text-center px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                    <button onclick="openContactModal('investment')" class="block w-full bg-yellow-600 text-black text-center px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors cursor-pointer">
                         Investment Inquiry
-                    </a>
+                    </button>
                 </div>
 
                 <!-- For Academic Institutions -->
@@ -625,9 +625,9 @@
                             Early partners from Oxford, MIT, Stanford, Cambridge, and Harvard will shape marketplace standards and gain first-mover advantage in this emerging field.
                         </p>
                     </div>
-                    <a href="mailto:academic@auspexi.com" title="Email: academic@auspexi.com" class="block w-full bg-purple-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                    <button onclick="openContactModal('academic')" class="block w-full bg-purple-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors cursor-pointer">
                         Academic Partnership Inquiry
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -640,9 +640,9 @@
                     <a href="/demo.html" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
                         Request Demo
                     </a>
-                    <a href="mailto:sales@auspexi.com" title="Email: sales@auspexi.com" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    <button onclick="openContactModal('sales')" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
                         Partnership Inquiry
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -761,6 +761,184 @@
                 document.body.style.overflow = '';
             });
         });
+
+        // ===== CONTACT MODAL SYSTEM =====
+        const modal = document.getElementById('contactModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalForm = document.getElementById('modalForm');
+        const inquiryTypeInput = document.getElementById('inquiryType');
+        const closeModalBtn = document.getElementById('closeModal');
+        const successMessage = document.getElementById('successMessage');
+
+        // Form configurations with Formspree IDs
+        const formConfigs = {
+            enterprise: {
+                id: 'mwpwlkye',
+                title: 'Enterprise Inquiry',
+                description: 'Tell us about your enterprise needs'
+            },
+            platform: {
+                id: 'mrbopgjg',
+                title: 'Platform Partnership Inquiry',
+                description: 'Interested in integrating our framework?'
+            },
+            regulatory: {
+                id: 'mnnopqwj',
+                title: 'Regulatory Inquiry',
+                description: 'Questions about compliance and standards?'
+            },
+            investment: {
+                id: 'xjkpyvly',
+                title: 'Investment Inquiry',
+                description: 'Interested in mission-aligned investment?'
+            },
+            academic: {
+                id: 'manleyvj',
+                title: 'Academic Partnership Inquiry',
+                description: 'Collaborate on research and frameworks?'
+            },
+            sales: {
+                id: 'xqagpknl',
+                title: 'General Partnership Inquiry',
+                description: 'How can we work together?'
+            }
+        };
+
+        // Open modal function
+        function openContactModal(type) {
+            const config = formConfigs[type];
+            if (!config) return;
+
+            // Set modal content
+            modalTitle.textContent = config.title;
+            document.getElementById('modalDescription').textContent = config.description;
+            inquiryTypeInput.value = type;
+            
+            // Update form action
+            modalForm.action = `https://formspree.io/f/${config.id}`;
+            
+            // Show modal
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal function
+        function closeContactModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+            modalForm.reset();
+            successMessage.classList.add('hidden');
+        }
+
+        // Close modal on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeContactModal();
+        });
+
+        // Close button
+        closeModalBtn.addEventListener('click', closeContactModal);
+
+        // Form submission
+        modalForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(modalForm);
+            const submitBtn = modalForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                const response = await fetch(modalForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    modalForm.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                    setTimeout(() => {
+                        closeContactModal();
+                    }, 3000);
+                } else {
+                    alert('Something went wrong. Please try emailing us directly.');
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try emailing us directly.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Escape key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeContactModal();
+            }
+        });
 </script>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-gray-900 rounded-xl max-w-md w-full p-8 border border-gray-700 relative">
+        <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <h2 id="modalTitle" class="text-2xl font-bold text-white mb-2">Contact Us</h2>
+        <p id="modalDescription" class="text-gray-400 mb-6">How can we help?</p>
+
+        <form id="modalForm" method="POST" class="space-y-4">
+            <input type="hidden" id="inquiryType" name="inquiry_type" value="">
+            
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+                <input type="email" 
+                       id="email" 
+                       name="email" 
+                       required 
+                       class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                       placeholder="your@email.com">
+            </div>
+
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name (optional)</label>
+                <input type="text" 
+                       id="name" 
+                       name="name" 
+                       class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                       placeholder="Your name">
+            </div>
+
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message (optional)</label>
+                <textarea id="message" 
+                          name="message" 
+                          rows="4" 
+                          class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                          placeholder="Tell us more about your needs..."></textarea>
+            </div>
+
+            <button type="submit" 
+                    class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Send Inquiry
+            </button>
+        </form>
+
+        <div id="successMessage" class="hidden text-center">
+            <div class="text-green-400 text-5xl mb-4">✓</div>
+            <h3 class="text-xl font-bold text-white mb-2">Message Sent!</h3>
+            <p class="text-gray-400">We'll get back to you soon.</p>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
