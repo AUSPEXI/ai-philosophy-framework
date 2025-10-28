@@ -310,8 +310,19 @@
                     </svg>
                 </button>
             </div>
-            <div id="pdfViewer" class="p-4 overflow-auto" style="max-height: calc(90vh - 60px);">
-                <p class="text-gray-400 text-center py-8">PDF viewer coming soon. For now, please view the <a href="https://www.linkedin.com/posts/gwylym-pryce-owen-a0b450268_practising-a-confident-and-dignified-humility-activity-7388573570265792512-Atgz" target="_blank" class="text-blue-400 hover:text-blue-300 underline">original LinkedIn thread</a>.</p>
+            <div id="pdfViewer" class="p-4 overflow-auto bg-gray-800" style="max-height: calc(90vh - 60px);">
+                <embed src="/blog/linkedin-humility-thread.pdf" 
+                       width="100%" 
+                       height="800px" 
+                       type="application/pdf"
+                       class="rounded">
+                <div class="text-center mt-4">
+                    <a href="/blog/linkedin-humility-thread.pdf" 
+                       download="LinkedIn-Humility-Thread.pdf"
+                       class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                        📥 Download PDF
+                    </a>
+                </div>
             </div>
         </div>
     </div>
